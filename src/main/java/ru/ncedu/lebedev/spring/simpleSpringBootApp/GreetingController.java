@@ -10,9 +10,7 @@ import java.util.Map;
 public class GreetingController {
 
     @GetMapping
-    public String defaultInformation(Map<String, Object> model) {
-        model.put("defaultInformation",
-                "To see greetings enter next URL: /hello");
+    public String defaultInformation() {
         return "default";
     }
 
