@@ -57,8 +57,34 @@
         <java.version>1.8</java.version>
     </properties>
 
+    <pluginRepositories>
+        <pluginRepository>
+            <id>pvsstudio-maven-repo</id>
+            <url>http://files.viva64.com/java/pvsstudio-maven-repository/</url>
+        </pluginRepository>
+    </pluginRepositories>
+
     <build>
         <plugins>
+            <plugin>
+                <groupId>com.pvsstudio</groupId>
+                <artifactId>pvsstudio-maven-plugin</artifactId>
+                <version>7.03.32667</version>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>pvsAnalyze</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <analyzer>
+                        <outputType>text</outputType>
+                        <outputFile>path/to/output.txt</outputFile>
+                    </analyzer>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
